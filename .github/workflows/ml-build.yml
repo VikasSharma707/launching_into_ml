@@ -20,7 +20,7 @@ jobs:
 
       - name: Run notebooks
         run: | 
-          for notebook in LAUNCHING_INTO_ML/*.ipynb; do
+          for notebook in launching_into_ml/improve_data_quality/improve_data_quality.ipynb/*.ipynb; do
             jupyter nbconvert --execute --to notebook --inplace "$notebook"
           done
 
