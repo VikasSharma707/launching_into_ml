@@ -1,31 +1,8 @@
-on:
-  push:
-    branches:
-      - main
-
+on: push
 jobs:
-  run-notebooks:
+  fist-jobs:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.x  # Replace with your desired Python version
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install nbconvert
-
-      - name: Run notebooks
-        run: | 
-          for notebook in launching_into_ml/improve_data_quality/improve_data_quality.ipynb/*.ipynb; do
-            jupyter nbconvert --execute --to notebook --inplace "$notebook"
-          done
-
-      - name: Upload results
-        uses: actions/upload-artifact@v2
-        with:
-          name: executed-notebooks
-          path: .
+      - run: python --version
+      - run: jupyter nbconvert --to python launching_into_ml/improve_data_quality/improve_data_quality.ipynb
+      - run: python launching_into_ml/improve_data_quality/improve_data_quality.ipynb
