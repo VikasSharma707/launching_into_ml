@@ -1,0 +1,7 @@
+on: push
+jobs:
+  fist-jobs:
+    runs-on: ubuntu-latest
+    container: node:17.6.0
+    steps:
+      - run: python --version
