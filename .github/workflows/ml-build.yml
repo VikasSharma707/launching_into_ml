@@ -16,7 +16,7 @@ jobs:
         run: python -m pip install nbconvert
 
       - name: Convert And Run Jypyter Notebook
-        run: jupyter nbconvert --to notebook --execute improve_data_quality.ipynb
+        run: jupyter nbconvert --to notebook --execute improve_data_quality/improve_data_quality.ipynb
       
       - name: Upload static site content
         uses: actions/upload-artifact@v3
